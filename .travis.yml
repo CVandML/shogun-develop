@@ -1,0 +1,72 @@
+sudo: required
+language: cpp
+notifications:
+  email: false
+  irc:
+    channels:
+      - "irc.freenode.org#shogun"
+    on_success: change
+    on_failure: always
+    template:
+      - "it's %{author}'s turn to pay the next round of drinks for the massacre he caused in %{repository}: %{build_url}"
+matrix:
+  fast_finish: true
+  include:
+    - compiler: gcc
+      services: docker
+    - compiler: clang
+      services: docker
+    - compiler: clang
+      services: docker
+      python: "2.7_with_system_site_packages"
+      language: python
+      env:
+        - CMAKE_OPTIONS="-DPythonModular=ON -DTRAVIS_DISABLE_UNIT_TESTS=ON -DTRAVIS_DISABLE_LIBSHOGUN_TESTS=ON"
+        - CC=clang
+        - CXX=clang++
+    - compiler: clang
+      services: docker
+      language: ruby
+      env:
+        - CMAKE_OPTIONS="-DRubyModular=ON -DTRAVIS_DISABLE_UNIT_TESTS=ON -DTRAVIS_DISABLE_LIBSHOGUN_TESTS=ON"
+        - CC=clang
+        - CXX=clang++
+    - compiler: clang
+      services: docker
+      language: java
+      env:
+        - CMAKE_OPTIONS="-DJavaModular=ON -DTRAVIS_DISABLE_UNIT_TESTS=ON -DTRAVIS_DISABLE_LIBSHOGUN_TESTS=ON"
+        - CC=clang
+        - CXX=clang++
+    - compiler: clang
+      services: docker
+      env:
+        - CMAKE_OPTIONS="-DCSharpModular=ON -DTRAVIS_DISABLE_UNIT_TESTS=ON -DTRAVIS_DISABLE_LIBSHOGUN_TESTS=ON"
+        - CC=clang
+        - CXX=clang++
+    - compiler: clang
+      services: docker
+      env:
+        - CMAKE_OPTIONS="-DLuaModular=ON -DTRAVIS_DISABLE_UNIT_TESTS=ON -DTRAVIS_DISABLE_LIBSHOGUN_TESTS=ON"
+        - CC=clang
+        - CXX=clang++
+    - compiler: gcc
+      services: docker
+      env:
+        - CMAKE_OPTIONS="-DOctaveModular=ON -DTRAVIS_DISABLE_UNIT_TESTS=ON -DTRAVIS_DISABLE_LIBSHOGUN_TESTS=ON"
+    - compiler: clang
+      services: docker
+      env:
+        - CMAKE_OPTIONS="-DRModular=ON -DTRAVIS_DISABLE_UNIT_TESTS=ON -DTRAVIS_DISABLE_LIBSHOGUN_TESTS=ON"
+        - CC=clang
+        - CXX=clang++
+before_install:
+  - docker pull shogun/shogun-dev
+  - echo $CC; echo $CXX
+  - docker run -t -d -P -e "JAVA_HOME=/usr/lib/jvm/java-8-oracle" -e "CC=$CC" -e "CXX=$CXX" --name devenv -v $PWD:/opt/shogun shogun/shogun-dev /bin/sh -c "mkdir /opt/shogun/build;bash"
+before_script:
+  - docker exec -t devenv /bin/sh -c "cd /opt/shogun/build; cmake -DCMAKE_INSTALL_PREFIX=$HOME/shogun-build -DENABLE_TESTING=ON $CMAKE_OPTIONS .."
+script:
+  - docker exec -t devenv /bin/sh -c "cd /opt/shogun/build; make -j2"
+  - docker exec -t devenv /bin/sh -c "cd /opt/shogun/build; make install"
+  - docker exec -t devenv /bin/sh -c "cd /opt/shogun/build; ctest --output-on-failure -j 2"

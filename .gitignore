@@ -1,0 +1,349 @@
+*.o
+*.gcno
+*.gcda
+*.class
+*doxygen_xml
+*_wrap.h
+*_wrap.cxx
+*.so
+*.so.*
+*.dylib
+*.a
+*_doxygen.i
+.depend
+.config
+.cpuinfo
+.cpuinfo.c
+*.pyc
+GPATH
+GRTAGS
+GTAGS
+TAGS
+tags
+configure.log
+*.swp
+*.swo
+*.mex*
+*.oct
+.localvimrc
+*.DS_Store
+cscope.*
+cpplint.py
+
+*~
+\#*\#
+
+*.orig
+
+
+# /doc/
+/doc/Doxyfile_en
+/doc/Doxyfile_cn
+/doc/html
+/doc/html_cn
+/doc/pages/Configure.generated
+/doc/pages*/Examples*.mainpage
+
+# /src/
+/src/shogun/lib/versionstring.h
+/src/shogun/lib/config.h
+/src/shogun/base/class_list.cpp
+/src/shogun/Makefile
+/src/interfaces/*/Makefile
+/src/examples
+/src/shogun/.clang_complete
+/src/configure-*-*.c*
+/src/build-local
+
+# modular interfaces
+/src/interfaces/*_modular/*.doxy
+/src/interfaces/*_modular/Evaluation.i
+/src/interfaces/*_modular/Regression.i
+/src/interfaces/*_modular/Library.i
+/src/interfaces/*_modular/Distribution.i
+/src/interfaces/*_modular/Structure.i
+/src/interfaces/*_modular/Classifier.i
+/src/interfaces/*_modular/Features.i
+/src/interfaces/*_modular/Kernel.i
+/src/interfaces/*_modular/Preprocessor.i
+/src/interfaces/*_modular/Distance.i
+/src/interfaces/*_modular/Clustering.i
+/src/interfaces/*_modular/SGBase.i
+/src/interfaces/*_modular/IO.i
+/src/interfaces/*_modular/Mathematics.i
+/src/interfaces/*_modular/ModelSelection.i
+/src/interfaces/*_modular/modshogun.i
+/src/interfaces/*_modular/modshogun_ignores.i
+/src/interfaces/*_modular/*_includes.i
+/src/interfaces/*_modular/Makefile
+/src/interfaces/*_modular/Converter.i
+/src/interfaces/*_modular/Multiclass.i
+/src/interfaces/*_modular/Machine.i
+/src/interfaces/*_modular/Transfer.i
+/src/interfaces/*_modular/Loss.i
+/src/interfaces/*_modular/Statistics.i
+/src/interfaces/*_modular/Latent.i
+/src/interfaces/*_modular/GaussianProcess.i
+
+# particular modular ones
+/src/interfaces/csharp_modular/*.cs
+/src/interfaces/csharp_modular/abstract_types_extension.i
+/src/interfaces/csharp_modular/modshogun.dll
+/src/interfaces/java_modular/*.java
+/src/interfaces/java_modular/*.jar
+/src/interfaces/java_modular/*.class
+/src/interfaces/java_modular/org/*
+/src/interfaces/java_modular/shogun/*
+/src/interfaces/python_modular/*.py
+/src/interfaces/python_modular/abstract_types_extension.i
+/src/interfaces/r_modular/*.R
+/src/interfaces/r_modular/*.RData
+/src/interfaces/perl_modular/*.pm
+/src/interfaces/octave_modular/abstract_types_extension.i
+/.duped_py_pl.pb
+
+# /examples/
+*.log
+*.exe
+/examples/documented
+/examples/missing.log
+/examples/undocumented/libshogun/*
+!/examples/undocumented/libshogun/*.cpp
+!/examples/undocumented/libshogun/CMakeLists.txt
+!/examples/undocumented/libshogun/tools/
+!examples/undocumented/python_modular/graphical/
+!examples/undocumented/python_modular/*.py
+!examples/undocumented/python_modular/CMakeLists.txt
+
+# /tests
+/tests/unit/shogun-unit-test
+/tests/unit/*.txt
+/tests/unit/*.xml
+/tests/unit/*.hdf5
+/tests/unit/*.json
+/tests/unit/combined_kernel.weights
+Testing/
+examples/undocumented/python_modular/serialized_svm.bz2
+examples/undocumented/python_modular/tmp/blaah.asc
+examples/undocumented/python_modular/tmp/blaah.h5
+examples/undocumented/python_modular/tmp/blaah.json
+examples/undocumented/python_modular/tmp/blaah.xml
+examples/undocumented/python_modular/vw_cache.dat.cache
+
+# cmake
+/CMakeFiles/
+CMakeCache.txt
+/build*
+/third_party
+
+# protobuf
+src/shogun/io/protobuf/*.pb.*
+
+# ipython notebook
+.ipynb_checkpoints/
+
+# CMake files
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Makefile
+build*/
+cmake_install.cmake
+install_manifest.txt
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Fortran module files
+*.mod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+
+# Emacs
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Org-mode
+.org-id-locations
+*_archive
+
+# flymake-mode
+*_flymake.*
+
+# eshell files
+/eshell/history
+/eshell/lastdir
+
+# elpa packages
+/elpa/
+
+# reftex files
+*.rel
+
+# AUCTeX auto folder
+/auto/
+
+# cask packages
+.cask/
+
+# Flycheck
+flycheck_*.el
+
+# server auth directory
+/server/
+
+# Vim
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+Session.vim
+.netrwhist
+*~
+tags
+
+# Eclipse
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+
+# Eclipse Core
+.project
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# PyDev specific (Python IDE for Eclipse)
+*.pydevproject
+
+# CDT-specific (C/C++ Development Tooling)
+.cproject
+
+# JDT-specific (Eclipse Java Development Tools)
+.classpath
+
+# Java annotation processor (APT)
+.factorypath
+
+# PDT-specific (PHP Development Tools)
+.buildpath
+
+# sbteclipse plugin
+.target
+
+# Tern plugin
+.tern-project
+
+# TeXlipse plugin
+.texlipse
+
+# STS (Spring Tool Suite)
+.springBeans
+
+# Code Recommenders
+.recommenders/
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# OSX files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# -*- mode: gitignore; -*-
+# -*- coding: utf-8 -*-
+# vim: set fileencoding=utf-8

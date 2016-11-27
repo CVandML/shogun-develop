@@ -1,0 +1,66 @@
+{
+    "Program": "require 'modshogun'\n\n$dependencies$program",
+    "Statement": "$statement\n",
+    "Comment": "#$comment\n",
+    "Init": {
+        "Construct": "$name = Modshogun::$typeName.new $arguments",
+        "Copy": "$name = $expr",
+        "CharVector": "$name = NArray.byte($arguments)",
+        "ByteVector": "$name = NArray.byte($arguments)",
+        "WordVector": "$name = NArray.byte($arguments)",
+        "IntVector": "$name = NArray.sint($arguments)",
+        "LongIntVector": "$name = NArray.int($arguments)",
+        "ULongIntVector": "$name = NArray.int($arguments)",
+        "ShortRealVector": "$name = NArray.sfloat($arguments)",
+        "RealVector": "$name = NArray.float($arguments)",
+        "LongRealVector": "$name = NArray.float($arguments)",
+        "ComplexVector": "$name = NArray.scomplex($arguments)",
+        "CharMatrix": "$name = NMatrix.float($arguments)",
+        "ByteMatrix": "$name = NMatrix.byte($arguments)",
+        "WordMatrix": "$name = NMatrix.byte($arguments)",
+        "IntMatrix": "$name = NMatrix.sint($arguments)",
+        "LongIntMatrix": "$name = NMatrix.int($arguments)",
+        "ULongIntMatrix": "$name = NMatrix.int($arguments)",
+        "ShortRealMatrix": "$name = NMatrix.sfloat($arguments)",
+        "RealMatrix": "$name = NMatrix.float($arguments)",
+        "LongRealMatrix": "$name = NMatrix.float($arguments)",
+        "ComplexMatrix": "$name = NMatrix.scomplex($arguments)"
+    },
+    "Assign": "$identifier = $expr",
+    "Type": {
+        "Default": "$typeName"
+    },
+    "Expr": {
+        "StringLiteral": "\"$literal\"",
+        "CharLiteral": "'$literal'",
+        "BoolLiteral": {
+            "True": "true",
+            "False": "false"
+        },
+        "IntLiteral": "$number",
+        "RealLiteral": "$number",
+        "FloatLiteral": "$number",
+        "MethodCall": "$object.$method $arguments",
+        "StaticCall": "Modshogun::$typeName.$method $arguments",
+        "Identifier": "$identifier",
+        "Enum":"Modshogun::$value"
+    },
+    "Element": {
+        "Access": {
+            "Vector": "$identifier[$indices]",
+            "Matrix": "$identifier[$indices]",
+            "BoolVector": "$identifier.get_element $indices",
+            "BoolMatrix": "$identifier.get_element $indices"
+        },
+        "Assign": {
+            "Vector": "$identifier[$indices] = $expr",
+            "Matrix": "$identifier[$indices] = $expr",
+            "BoolVector": "$identifier.set_element $expr, $indices",
+            "BoolMatrix": "$identifier.set_element $expr, $indices"
+        },
+        "ZeroIndexed": true
+    },
+    "Print": "puts $expr",
+    "OutputDirectoryName": "ruby",
+    "FileExtension": ".rb"
+}
